@@ -2,8 +2,7 @@
 
 This is a web-based utility designed to test the effectiveness of your browser's ad-blocking and anti-tracking capabilities. It runs a series of live checks against known advertising networks, analytics trackers, and cosmetic filter rules to provide a clear score and a detailed breakdown of your browser's defences.
 
-![Screenshot of the AdBlock Defence Tester](./screenshot.png) 
-*(Note: You will need to add a screenshot.png to the root of your project for the image to display.)*
+![Screenshot of the AdBlock Defence Tester](./screenshot.jpg) 
 
 ---
 
