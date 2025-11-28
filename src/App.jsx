@@ -8,65 +8,68 @@ import './App.css';
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
+  visible: { opacity: 1 },
 };
 
 function App() {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(() => tests.map(t => ({ ...t, status: STATUS.PENDING })));
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
-    const baitElements = [];
-    const timeout = 2000;
+    const runAllTests = async () => {
+      const cosmeticBaitElements = [];
 
-    setResults(tests.map((test) => ({ ...test, status: STATUS.PENDING })));
+      // Create and append all cosmetic bait elements first
+      tests.forEach(test => {
+        if (test.type === 'cosmetic' && test.bait) {
+          const el = document.createElement(test.bait.tag);
+          Object.keys(test.bait.attrs).forEach(attr => {
+            el[attr] = test.bait.attrs[attr];
+          });
+          document.body.appendChild(el);
+          cosmeticBaitElements.push(el);
+        }
+      });
+      
+      // Allow a moment for the DOM to update and for cosmetic rules to apply
+      await new Promise(resolve => setTimeout(resolve, 100));
 
-    const runFinalChecks = () => {
-      setResults((prevResults) =>
-        prevResults.map((test) => {
-          let newStatus = test.status;
-          if (test.type === 'cosmetic') {
+      const testPromises = tests.map(async (test) => {
+        const result = { ...test };
+        if (test.check) {
+          if (test.type === 'network') {
+            result.status = await test.check();
+          } else if (test.type === 'cosmetic') {
             const element = document.getElementById(test.id);
-            if (element) newStatus = test.check(element);
-          } else if (newStatus === STATUS.PENDING && test.type === 'network') {
-            newStatus = STATUS.PROTECTED;
+            result.status = test.check(element);
           }
-          return { ...test, status: newStatus };
-        })
-      );
+        }
+        
+        // Update state for this specific test as it completes
+        setResults(prev => prev.map(r => r.id === result.id ? result : r));
+        return result;
+      });
+
+      await Promise.all(testPromises);
+      
       setFinished(true);
+
+      // Cleanup cosmetic elements
+      cosmeticBaitElements.forEach(el => {
+        if (document.body.contains(el)) {
+          document.body.removeChild(el);
+        }
+      });
     };
 
-    tests.forEach((test) => {
-      if (!test.bait) return;
-      const el = document.createElement(test.bait.tag);
-      el.id = test.id;
-      Object.keys(test.bait.attrs).forEach((attr) => { el[attr] = test.bait.attrs[attr]; });
-      if (test.type === 'network') {
-        el.onload = () => setResults((prev) => prev.map((r) => (r.id === test.id ? { ...r, status: test.check(true) } : r)));
-        el.onerror = () => setResults((prev) => prev.map((r) => (r.id === test.id ? { ...r, status: test.check(false) } : r)));
-      }
-      document.body.appendChild(el);
-      baitElements.push(el);
-    });
-
-    const timer = setTimeout(runFinalChecks, timeout);
-    return () => {
-      clearTimeout(timer);
-      baitElements.forEach((el) => { if (document.body.contains(el)) document.body.removeChild(el); });
-    };
+    runAllTests();
   }, []);
 
   const protectedCount = results.filter((r) => r.status === STATUS.PROTECTED).length;
 
   return (
     <>
-      <motion.header 
+      <motion.header
         className="header"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -77,7 +80,6 @@ function App() {
       </motion.header>
 
       <div className="main-container">
-        {/* Left Column: Results List */}
         <div className="left-column">
           <div className="results-list-container">
             <div className="results-header">
@@ -99,13 +101,12 @@ function App() {
           </div>
           <footer className="footer">
             <p>
-                Created by <a href="https://github.com/DebdootManna" target="_blank" rel="noopener noreferrer">Debdoot Manna</a> | 
-                Portfolio: <a href="https://debdootmanna.me" target="_blank" rel="noopener noreferrer">debdootmanna.me</a>
+              Created by <a href="https://github.com/DebdootManna" target="_blank" rel="noopener noreferrer">Debdoot Manna</a> |
+              Portfolio: <a href="https://debdootmanna.me" target="_blank" rel="noopener noreferrer">debdootmanna.me</a>
             </p>
           </footer>
         </div>
 
-        {/* Right Column: Charts and Info */}
         <div className="right-column">
           <AnimatePresence>
             {finished && (
@@ -115,13 +116,13 @@ function App() {
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 <div className="charts-container">
-                    <ResultChart protectedCount={protectedCount} totalCount={results.length} />
-                    <CategoryBarChart results={results} />
+                  <ResultChart protectedCount={protectedCount} totalCount={results.length} />
+                  <CategoryBarChart results={results} />
                 </div>
                 <div className="description-box">
-                    <h3>How It Works</h3>
-                    <p>This page dynamically attempts to load scripts from known advertising and tracking domains. It also creates hidden page elements that are targeted by common cosmetic filter lists.</p>
-                    <p>If a script fails to load, or if a page element is hidden from view, the test is marked as <span className="status-text status-blocked">BLOCKED</span>. If the request succeeds and the content is visible, it's marked as <span className="status-text status-allowed">ALLOWED</span>.</p>
+                  <h3>How It Works</h3>
+                  <p>This page uses the `fetch` API in 'no-cors' mode to test network-level blocking. If a request receives an error, it's considered <span className="status-text status-blocked">BLOCKED</span>. For cosmetic tests, it checks if specific elements are hidden by CSS rules.</p>
+                  <p>This method accurately distinguishes between blocks from extensions and failures from other issues like CORS, preventing false positives.</p>
                 </div>
               </motion.div>
             )}
