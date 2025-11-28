@@ -1,0 +1,56 @@
+.test-row-minimal {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+/* Remove bottom border from the very last row */
+.test-row-minimal:last-child {
+  border-bottom: none;
+}
+
+.test-row-minimal:hover {
+  background-color: var(--row-hover-bg);
+}
+
+.test-category {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.test-target-minimal {
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.test-status-minimal {
+  text-align: right;
+}
+
+.status-text {
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.status-blocked {
+  color: var(--platinum);
+}
+
+.status-allowed {
+  color: var(--accent-color);
+}
