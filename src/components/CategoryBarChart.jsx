@@ -2,14 +2,22 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const CategoryBarChart = ({ results }) => {
-  const categories = [...new Set(results.map(r => r.category))];
-  
-  const categoryData = categories.map(category => {
-    const testsInCategory = results.filter(r => r.category === category);
+  // Use a map to group results, ensuring any undefined/null category becomes 'General'
+  const grouped = results.reduce((acc, r) => {
+    const key = r.category || 'General';
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(r);
+    return acc;
+  }, {});
+
+  const categoryData = Object.keys(grouped).map(categoryName => {
+    const testsInCategory = grouped[categoryName];
     const total = testsInCategory.length;
     const blocked = testsInCategory.filter(r => r.status === 'BLOCKED').length;
     const percentage = total > 0 ? (blocked / total) * 100 : 0;
-    return { name: category, percentage };
+    return { name: categoryName, percentage };
   });
 
   return (

@@ -14,10 +14,10 @@ const sources = [
 
 // Keywords to help categorize entries from mixed lists like OISD
 const categoryKeywords = {
-  ADS: ['ad', 'banner', 'doubleclick', 'syndication', 'yield', 'monetize'],
-  ANALYTICS: ['analytic', 'metric', 'tracker', 'telemetry', 'pixel', 'collect'],
-  SOCIAL: ['facebook', 'twitter', 'linkedin', 'pinterest'],
-  MALWARE: ['malware', 'exploit', 'phishing'],
+  ADS: ['ad', 'banner', 'doubleclick', 'syndication', 'yield', 'monetize', 'sponsor'],
+  ANALYTICS: ['analytic', 'metric', 'tracker', 'telemetry', 'pixel', 'collect', 'stats'],
+  SOCIAL: ['facebook', 'twitter', 'linkedin', 'pinterest', 'instagram'],
+  MALWARE: ['malware', 'exploit', 'phishing', 'ransom'],
 };
 
 /**
@@ -70,10 +70,9 @@ function parseList(content, sourceName, defaultCategory) {
     }
     
     // Clean up common prefixes/suffixes and patterns
-    domain = domain.replace(/^0.0.0.0\s+/, ''); // For hosts-file format
-    domain = domain.replace(/^127.0.0.1\s+/, ''); // For hosts-file format
-    domain = domain.replace(/^(www|ads|ad|tracker)\./, ''); // Remove common subdomains
-
+    domain = domain.replace(/^0\.0\.0\.0\s+/, ''); // For hosts-file format
+    domain = domain.replace(/^127\.0\.0\.1\s+/, ''); // For hosts-file format
+    
     // Remove any path info
     const slashIndex = domain.indexOf('/');
     if (slashIndex !== -1) {
@@ -88,7 +87,8 @@ function parseList(content, sourceName, defaultCategory) {
             const foundCategory = Object.keys(categoryKeywords).find(key => 
                 categoryKeywords[key].some(keyword => domain.includes(keyword))
             );
-            category = foundCategory || 'ADS'; // Default mixed entries to ADS
+            // If no keyword matches, default to a 'General' category instead of 'ADS'
+            category = foundCategory || 'General';
         }
 
         results.add(JSON.stringify({ category, target: domain, source: sourceName }));
@@ -115,7 +115,7 @@ function shuffleArray(array) {
 async function main() {
   console.log('Starting filter list processing...');
   
-  const allEntries = [];
+  let allEntries = [];
 
   for (const source of sources) {
     const content = await fetchList(source.url);
@@ -126,7 +126,10 @@ async function main() {
     }
   }
 
-  console.log(`\nTotal unique entries before selection: ${allEntries.length}`);
+  // Defensive check: Filter out any malformed entries without a category or target
+  allEntries = allEntries.filter(entry => entry.category && entry.target);
+
+  console.log(`\nTotal valid entries before selection: ${allEntries.length}`);
 
   // Group entries by category
   const groupedByCategory = allEntries.reduce((acc, entry) => {

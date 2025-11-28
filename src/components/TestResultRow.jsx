@@ -16,7 +16,7 @@ const TestResultRow = ({ category, target, status, index }) => {
       animate="visible"
       transition={{ duration: 0.5, delay: index * 0.03 }}
     >
-      <div className="test-category">{category}</div>
+      <div className="test-category">{category || 'General'}</div>
       <div className="test-target-minimal">{target}</div>
       <div className="test-status-minimal">
         <span className={`status-text status-${status.toLowerCase()}`}>{status}</span>
