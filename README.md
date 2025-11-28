@@ -2,7 +2,7 @@
 
 This is a web-based utility designed to test the effectiveness of your browser's ad-blocking and anti-tracking capabilities. It runs a series of live checks against known advertising networks, analytics trackers, and cosmetic filter rules to provide a clear score and a detailed breakdown of your browser's defences.
 
-![Screenshot of the AdBlock Defence Tester](./screenshot.png) 
+![Screenshot of the AdBlock Defence Tester](./public/screenshot.png) 
 *(Note: You will need to add a screenshot.png to the root of your project for the image to display.)*
 
 ---
@@ -38,7 +38,7 @@ You need to have [Node.js](https://nodejs.org/) (version 16 or later) and npm in
 
 1.  **Clone the repo:**
     ```sh
-    git clone https://github.com/your_username/adblock-defence-check.git
+    git clone https://github.com/DebdootManna/adblock-defence-check.git
     ```
 2.  **Navigate to the project directory:**
     ```sh
