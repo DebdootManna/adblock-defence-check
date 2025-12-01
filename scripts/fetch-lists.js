@@ -1,6 +1,5 @@
-// scripts/fetch-lists.js
-const fetch = require('node-fetch');
-const crypto = require('crypto');
+import fetch from 'node-fetch';
+import crypto from 'crypto';
 
 /**
  * Fetches content from a URL and computes its SHA256 checksum.
@@ -8,7 +7,7 @@ const crypto = require('crypto');
  * @returns {Promise<{content: string, checksum: string}>}
  * @throws Will throw an error if the fetch fails.
  */
-async function fetchList(url) {
+export async function fetchList(url) {
   const response = await fetch(url, { timeout: 15000 }); // 15-second timeout
   if (!response.ok) {
     throw new Error(`Request failed with status ${response.status}: ${response.statusText}`);
@@ -17,5 +16,3 @@ async function fetchList(url) {
   const checksum = crypto.createHash('sha256').update(content).digest('hex');
   return { content, checksum };
 }
-
-module.exports = { fetchList };

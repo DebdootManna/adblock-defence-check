@@ -1,8 +1,11 @@
-// scripts/build-filters.js
-const fs = require('fs');
-const path = require('path');
-const { fetchList } = require('./fetch-lists');
-const { parseListContent, categorizeDomain } = require('./parse-utils');
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { fetchList } from './fetch-lists.js';
+import { parseListContent, categorizeDomain } from './parse-utils.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const sources = [
     { name: 'easylist', url: 'https://easylist.to/easylist/easylist.txt', category: 'ADS' },

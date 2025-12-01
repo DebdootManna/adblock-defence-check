@@ -1,7 +1,3 @@
-// scripts/parse-utils.js
-const fs = require('fs');
-const path = require('path');
-
 // Keywords to help categorize entries from mixed lists
 const categoryKeywords = {
   ADS: ['ad', 'banner', 'doubleclick', 'syndication', 'yield', 'monetize', 'sponsor'],
@@ -15,7 +11,7 @@ const categoryKeywords = {
  * @param {string} content The raw text content of the filter list.
  * @returns {Set<string>} A Set of unique, valid domains from the list.
  */
-function parseListContent(content) {
+export function parseListContent(content) {
   const lines = content.split('\n');
   const domains = new Set();
   let ignoredCosmeticRules = 0;
@@ -75,7 +71,7 @@ function parseListContent(content) {
  * @param {string} defaultCategory The default category from the source list.
  * @returns {string} The determined category.
  */
-function categorizeDomain(domain, defaultCategory) {
+export function categorizeDomain(domain, defaultCategory) {
   if (defaultCategory !== 'MIXED') {
     return defaultCategory;
   }
@@ -86,8 +82,3 @@ function categorizeDomain(domain, defaultCategory) {
 
   return foundCategory || 'General';
 }
-
-module.exports = {
-  parseListContent,
-  categorizeDomain,
-};
