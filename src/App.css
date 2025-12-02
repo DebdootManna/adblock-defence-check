@@ -146,3 +146,46 @@ body {
 .footer a:hover {
     color: var(--text-primary);
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .right-column {
+        position: static;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .charts-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-header {
+        grid-template-columns: 80px 1fr 80px;
+        gap: 1rem;
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+}

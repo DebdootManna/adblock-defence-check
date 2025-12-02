@@ -54,3 +54,12 @@
 .status-allowed {
   color: var(--accent-color);
 }
+
+@media (max-width: 480px) {
+  .test-row-minimal {
+      grid-template-columns: 80px 1fr 80px;
+      gap: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+  }
+}
