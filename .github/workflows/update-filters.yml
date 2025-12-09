@@ -27,6 +27,14 @@ jobs:
       - name: Build filter list
         run: npm run update-filters
 
+      - name: "Debug: List files and .gitignore content"
+        run: |
+          echo "--- .gitignore content ---"
+          cat .gitignore
+          echo "--- file listing ---"
+          ls -laR
+          echo "---------------------"
+
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Actions Bot'
@@ -36,7 +44,7 @@ jobs:
             git add public/data/filters.json
           fi
           if [ -f "logs/update.log" ]; then
-            git add logs/update.log
+            git add -f logs/update.log
           fi
           # Check if there are changes to commit
           if ! git diff --staged --quiet; then
