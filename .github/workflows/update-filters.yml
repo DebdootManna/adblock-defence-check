@@ -36,7 +36,7 @@ jobs:
             git add public/data/filters.json
           fi
           if [ -f "logs/update.log" ]; then
-            git add logs/update.log
+            git add -f logs/update.log
           fi
           # Check if there are changes to commit
           if ! git diff --staged --quiet; then
