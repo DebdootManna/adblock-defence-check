@@ -7,6 +7,9 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch: # Allows manual execution from the GitHub Actions tab
 
+permissions:
+  contents: write
+
 jobs:
   update-list:
     runs-on: ubuntu-latest
