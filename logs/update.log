@@ -819,3 +819,8 @@
 2026-01-26T02:01:51.500Z - - Cosmetic: 2 rules (3.1%)
 2026-01-26T02:01:51.500Z - Rules comparison: 45 added, 45 removed.
 2026-01-26T02:01:51.501Z - Successfully generated new filters.json with 65 rules.
+2026-01-27T01:58:26.650Z - Starting filter update process...
+2026-01-27T01:58:26.822Z - Source 'easylist' has changed.
+2026-01-27T01:58:26.864Z - Source 'easyprivacy' has changed.
+2026-01-27T01:58:26.960Z - Source 'adguard' has changed.
+2026-01-27T01:58:27.627Z - ERROR: Failed to fetch source 'oisd': fetch failed. Aborting update.
