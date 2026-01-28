@@ -824,3 +824,20 @@
 2026-01-27T01:58:26.864Z - Source 'easyprivacy' has changed.
 2026-01-27T01:58:26.960Z - Source 'adguard' has changed.
 2026-01-27T01:58:27.627Z - ERROR: Failed to fetch source 'oisd': fetch failed. Aborting update.
+2026-01-28T01:54:36.890Z - Starting filter update process...
+2026-01-28T01:54:37.145Z - Source 'easylist' has changed.
+2026-01-28T01:54:37.222Z - Source 'easyprivacy' has changed.
+2026-01-28T01:54:37.318Z - Source 'adguard' has changed.
+2026-01-28T01:54:38.181Z - Source 'oisd' has changed.
+2026-01-28T01:54:38.181Z - Changes detected. Proceeding to build new filter list.
+2026-01-28T01:54:38.730Z - Total processed rules: 288955
+2026-01-28T01:54:38.731Z - Total ignored cosmetic rules: 37383
+2026-01-28T01:54:38.999Z - Category breakdown:
+2026-01-28T01:54:39.000Z - - ADS: 15 rules (23.1%)
+2026-01-28T01:54:39.000Z - - ANALYTICS: 15 rules (23.1%)
+2026-01-28T01:54:39.000Z - - General: 15 rules (23.1%)
+2026-01-28T01:54:39.000Z - - SOCIAL: 12 rules (18.5%)
+2026-01-28T01:54:39.000Z - - MALWARE: 6 rules (9.2%)
+2026-01-28T01:54:39.000Z - - Cosmetic: 2 rules (3.1%)
+2026-01-28T01:54:39.001Z - Rules comparison: 45 added, 45 removed.
+2026-01-28T01:54:39.001Z - Successfully generated new filters.json with 65 rules.
