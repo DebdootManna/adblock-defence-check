@@ -1,252 +1,267 @@
 {
-  "last_updated": "2026-02-28T02:00:19.767Z",
+  "last_updated": "2026-03-01T02:29:58.271Z",
   "sources": {
     "easylist": {
       "url": "https://easylist.to/easylist/easylist.txt",
-      "checksum": "cff057436aba1d1c6ccfc3e057ce1424bd04cae718828c12e8d21437b308f665"
+      "checksum": "d48ac62d2f415b99b09ae6e06e6c5b700cfe1d34e78d8902cc410846d4502557"
     },
     "easyprivacy": {
       "url": "https://easylist.to/easylist/easyprivacy.txt",
-      "checksum": "f56f1250ef0a003134d006c4e254d0ec6bae75f940b6cedce2a07ca56557a784"
+      "checksum": "16282424d6c69e53473722900eb346c4daad4185ac2400b6da3750d3b1a30eb9"
     },
     "adguard": {
       "url": "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
-      "checksum": "21f8a035d9570bccc9dc7f28523c2e6d90576935c093f39b130b64c5cff89d2d"
+      "checksum": "e95f7c68fc416dde5f8eb461fab9d9637a7dab51f521a5f5ad8c15563cb2c01f"
     },
     "oisd": {
       "url": "https://abp.oisd.nl/basic/",
-      "checksum": "5afa228e75e83f2424d0c1506536d403a414ada5159e2539c990fda48d558108"
+      "checksum": "dc3c25951eec8d04eb8f14fc6b637bee0901ac465520fcc64700903cda937d4c"
     }
   },
   "rules": [
     {
       "category": "ADS",
-      "target": "lm1.wkpcw.cn",
+      "target": "ads.grindinggears.com",
+      "source": "oisd"
+    },
+    {
+      "category": "ADS",
+      "target": "app.wvusports.com",
       "source": "adguard"
     },
     {
       "category": "ADS",
-      "target": "load.data.mannaz.com",
+      "target": "gfstrck.com",
       "source": "adguard"
     },
     {
       "category": "ADS",
-      "target": "mohursanders.cfd",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "collect.calvinklein.be",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "sync.tv",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "quietleaffield.com",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "314gqd3es.de",
+      "target": "bestcontenttrade.top",
       "source": "easylist"
     },
     {
       "category": "ADS",
-      "target": "cmptch.com",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "uekcrlxwkpxsm.online",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "tacticwane.com",
+      "target": "chdnenjtyssmn.online",
       "source": "easylist"
     },
     {
       "category": "ADS",
-      "target": "jjtmmlcyrudkn.website",
+      "target": "woodinereapplyalodium.cyou",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "server.teacherana.com.br",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "canyonconsultation.com",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "load.gtm.cheshirebaseball.com",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "partner.lifelinediag.cz",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "yuvfgqrctwn.com",
       "source": "easylist"
     },
     {
       "category": "ADS",
-      "target": "driftt.com",
+      "target": "gazelle.laurenagray.com",
       "source": "adguard"
     },
     {
       "category": "ADS",
-      "target": "cruzietv.com",
-      "source": "adguard"
-    },
-    {
-      "category": "ADS",
-      "target": "hottercensorbeaker.com",
+      "target": "deksoarguph.net",
       "source": "easylist"
     },
     {
       "category": "ADS",
-      "target": "ss.japebo.no",
+      "target": "sexchat.hu",
+      "source": "adguard"
+    },
+    {
+      "category": "ADS",
+      "target": "gtm.scclinic.com.br",
       "source": "adguard"
     },
     {
       "category": "ANALYTICS",
-      "target": "a8clk.petitjob.jp",
+      "target": "a11735.actonservice.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "a8cv.netvisionacademy.com",
+      "target": "ocpi.americanexpress.ca",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "n.homepass.com",
+      "target": "nfcube.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "qriqiz.lifeisgood.com",
+      "target": "stats.searchftps.net",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "trk.greenbuildexpo.com",
+      "target": "tracker.multisearch.io",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "edge.sterlingcapital.com",
+      "target": "a8clk.nobirun.jp",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "wwbsll.nissen.co.jp",
+      "target": "a44820.actonservice.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "freeplayervideo.com",
+      "target": "v.ctrl.blog",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "lmgenf.ludwigbeck.de",
+      "target": "carters.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "safety.west.com",
+      "target": "marketing.tfawealthplanning.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "smetrics.cedars-sinai.org",
+      "target": "texturetrick.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "mdws.communityfirst-cu.com",
+      "target": "ygtfgu.casamundo.nl",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "metrics.dish.com",
+      "target": "app-test.playtally.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "lps-info.arval.com",
+      "target": "marketing.dairyland.com",
       "source": "easyprivacy"
     },
     {
       "category": "ANALYTICS",
-      "target": "data.crm-edm.thsrc.com.tw",
+      "target": "gosenergy.actonservice.com",
       "source": "easyprivacy"
     },
     {
       "category": "General",
-      "target": "moolveericed.com",
+      "target": "wfvuctrttrdwk.global",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "cheaphat.pro",
+      "target": "lwxegrybymzah.love",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "joggingavenge.com",
+      "target": "ytekaafvvgkji.online",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "nipholder.com",
+      "target": "ggsfq.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "api.croct.io",
+      "target": "giaythethaonuhcm.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "hylrncjzgdtgi.site",
+      "target": "atbvxutitxgdf.website",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "channelintelligence.com",
+      "target": "xityonatallcolumn.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "scented-cash.pro",
+      "target": "behavepassword.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "semi-cod.nnmclub.ch",
+      "target": "hfdrgnarmwzsy.space",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "vistaseventhunkind.com",
+      "target": "sgfinery.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "phaithertodocko.net",
+      "target": "c097bde035.a0d1e378d8.com",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "xml-v4.axiombid.com",
+      "target": "jzhkmgdeesljp.online",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "hrllzdgzyzoiy.website",
+      "target": "sheeptaurgeersi.net",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "silicledomy.com",
+      "target": "track.rheinpfalz.de",
       "source": "oisd"
     },
     {
       "category": "General",
-      "target": "arsonclot.com",
+      "target": "static.runconverge.com",
+      "source": "oisd"
+    },
+    {
+      "category": "SOCIAL",
+      "target": "tr.facebook.com",
+      "source": "oisd"
+    },
+    {
+      "category": "SOCIAL",
+      "target": "twitterfollowers.site",
       "source": "oisd"
     },
     {
       "category": "SOCIAL",
       "target": "twitterchest.com",
+      "source": "oisd"
+    },
+    {
+      "category": "SOCIAL",
+      "target": "poorlytwitter.com",
       "source": "oisd"
     },
     {
@@ -261,7 +276,7 @@
     },
     {
       "category": "SOCIAL",
-      "target": "trk.pinterest.com",
+      "target": "an.facebook.com",
       "source": "oisd"
     },
     {
@@ -271,27 +286,7 @@
     },
     {
       "category": "SOCIAL",
-      "target": "poorlytwitter.com",
-      "source": "oisd"
-    },
-    {
-      "category": "SOCIAL",
-      "target": "an.facebook.com",
-      "source": "oisd"
-    },
-    {
-      "category": "SOCIAL",
-      "target": "rtb-us-east.linkedin.com",
-      "source": "oisd"
-    },
-    {
-      "category": "SOCIAL",
-      "target": "twitterfollowers.site",
-      "source": "oisd"
-    },
-    {
-      "category": "SOCIAL",
-      "target": "rtb-trk4.linkedin.com",
+      "target": "trk.pinterest.com",
       "source": "oisd"
     },
     {
@@ -301,17 +296,12 @@
     },
     {
       "category": "SOCIAL",
-      "target": "tr.facebook.com",
+      "target": "rtb-us-east.linkedin.com",
       "source": "oisd"
     },
     {
-      "category": "MALWARE",
-      "target": "aroseexploit.com",
-      "source": "oisd"
-    },
-    {
-      "category": "MALWARE",
-      "target": "udgrbq.malwarebytes.com",
+      "category": "SOCIAL",
+      "target": "rtb-trk4.linkedin.com",
       "source": "oisd"
     },
     {
@@ -321,12 +311,17 @@
     },
     {
       "category": "MALWARE",
+      "target": "previouslyvaluableexploit.com",
+      "source": "oisd"
+    },
+    {
+      "category": "MALWARE",
       "target": "ransommaliciousveneering.com",
       "source": "oisd"
     },
     {
       "category": "MALWARE",
-      "target": "previouslyvaluableexploit.com",
+      "target": "udgrbq.malwarebytes.com",
       "source": "oisd"
     },
     {
@@ -337,6 +332,11 @@
     {
       "category": "MALWARE",
       "target": "genesis.malwarebytes.com",
+      "source": "oisd"
+    },
+    {
+      "category": "MALWARE",
+      "target": "aroseexploit.com",
       "source": "oisd"
     },
     {
