@@ -102,7 +102,7 @@ function App() {
           <footer className="footer">
             <p>
               Created by <a href="https://github.com/DebdootManna" target="_blank" rel="noopener noreferrer">Debdoot Manna</a> |
-              Portfolio: <a href="https://debdootmanna.me" target="_blank" rel="noopener noreferrer">debdootmanna.me</a>
+              Portfolio: <a href="https://debdootmanna.codes" target="_blank" rel="noopener noreferrer">debdootmanna.codes</a>
             </p>
           </footer>
         </div>
