@@ -69,5 +69,5 @@ This will create a `dist` folder in your project directory with all the static a
 ## Credits
 
 This project was created by [Debdoot Manna](https://github.com/DebdootManna).
-- **Portfolio:** [debdootmanna.me](https://debdootmanna.me)
+- **Portfolio:** [debdootmanna.codes](https://debdootmanna.codes)
 - **GitHub:** [@DebdootManna](https://github.com/DebdootManna)
