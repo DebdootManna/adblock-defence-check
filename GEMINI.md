@@ -50,4 +50,25 @@ The core testing logic in `App.jsx` uses the `fetch` API with `mode: 'no-cors'`.
 ### 3. UI Components
 -   **`ResultChart.jsx`:** A custom SVG doughnut chart showing the overall percentage of blocked requests.
 -   **`CategoryBarChart.jsx`:** A component that provides a visual breakdown of block rates per category (Ads, Analytics, etc.).
--   **`TestResultRow.jsx`:** A minimal list-item component to display the status of each individual test, styled to look like a file explorer list.
+-   **`TestResultRow.jsx`**: A minimal list-item component to display the status of each individual test, styled to look like a file explorer list.
+
+---
+
+## SEO & Technical Optimization
+
+To improve search engine visibility and social media presence, the project includes several SEO enhancements:
+
+### 1. Meta Tags & Social Metadata
+The `index.html` file contains comprehensive meta tags, including:
+-   **SEO Basics:** Title, description, keywords, and canonical URL.
+-   **Open Graph (OG):** Metadata for rich link previews on Facebook, LinkedIn, etc.
+-   **Twitter Cards:** Specialized metadata for Twitter/X previews.
+-   **Asset Location:** The `screenshot.jpg` is located in the `public/` directory to ensure it is publicly accessible for these previews.
+
+### 2. Semantic HTML
+-   Heading hierarchy is strictly maintained (e.g., using `<h2>` for major sections like "How It Works") to aid search engine indexing and accessibility.
+
+### 3. Technical SEO Files
+-   **`public/robots.txt`**: Manages search engine crawling and points to the sitemap.
+-   **`public/sitemap.xml`**: Provides a map of the site's URLs for efficient indexing.
+
