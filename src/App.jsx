@@ -120,7 +120,7 @@ function App() {
                   <CategoryBarChart results={results} />
                 </div>
                 <div className="description-box">
-                  <h3>How It Works</h3>
+                  <h2>How It Works</h2>
                   <p>This page uses the `fetch` API in 'no-cors' mode to test network-level blocking. If a request receives an error, it's considered <span className="status-text status-blocked">BLOCKED</span>. For cosmetic tests, it checks if specific elements are hidden by CSS rules.</p>
                   <p>This method accurately distinguishes between blocks from extensions and failures from other issues like CORS, preventing false positives.</p>
                 </div>
