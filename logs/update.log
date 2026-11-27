@@ -5963,3 +5963,20 @@
 2026-11-26T07:12:24.517Z - - Cosmetic: 2 rules (3.0%)
 2026-11-26T07:12:24.517Z - Rules comparison: 45 added, 45 removed.
 2026-11-26T07:12:24.517Z - Successfully generated new filters.json with 67 rules.
+2026-11-27T07:08:24.689Z - Starting filter update process...
+2026-11-27T07:08:24.837Z - Source 'easylist' has changed.
+2026-11-27T07:08:24.899Z - Source 'easyprivacy' has changed.
+2026-11-27T07:08:25.060Z - Source 'adguard' has changed.
+2026-11-27T07:08:26.495Z - Source 'oisd' has changed.
+2026-11-27T07:08:26.496Z - Changes detected. Proceeding to build new filter list.
+2026-11-27T07:08:26.949Z - Total processed rules: 352047
+2026-11-27T07:08:26.949Z - Total ignored cosmetic rules: 37693
+2026-11-27T07:08:27.135Z - Category breakdown:
+2026-11-27T07:08:27.135Z - - ADS: 15 rules (22.4%)
+2026-11-27T07:08:27.135Z - - ANALYTICS: 15 rules (22.4%)
+2026-11-27T07:08:27.135Z - - General: 15 rules (22.4%)
+2026-11-27T07:08:27.135Z - - SOCIAL: 10 rules (14.9%)
+2026-11-27T07:08:27.135Z - - MALWARE: 10 rules (14.9%)
+2026-11-27T07:08:27.135Z - - Cosmetic: 2 rules (3.0%)
+2026-11-27T07:08:27.136Z - Rules comparison: 45 added, 45 removed.
+2026-11-27T07:08:27.136Z - Successfully generated new filters.json with 67 rules.
